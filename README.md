@@ -36,6 +36,33 @@ REST API для управления студентами на Flask.
    ```
    Сервер будет работать по адресу: http://localhost:8000
 
+## Системные требования
+
+### Операционная система
+- macOS 10.14+  
+- Windows 10+  
+- Ubuntu Linux 18.04+ (или аналогичные дистрибутивы)
+
+### Программное обеспечение
+- **Python 3.8+** (обязательно)  
+- **pip** (поставляется с Python)  
+- **git** (для клонирования репозитория)
+
+### Для Ubuntu Linux 24.04
+Если у вас стандартная установка Ubuntu, выполните:
+```bash
+sudo apt update
+sudo apt install python3 python3-pip python3-venv git curl
+```
+
+### Проверка установки
+Убедитесь, что установлены нужные версии:
+```bash
+python3 --version  # должно быть 3.8+
+pip --version
+git --version
+```
+
 ## API
 
 - `GET /students` — получить всех студентов  
@@ -54,7 +81,9 @@ pytest
 ## Пример POST запроса
 
 ```bash
-curl -X POST http://localhost:8000/students -H "Content-Type: application/json" -d '{"first_name": "Иван", "last_name": "Петров", "group": "ИВТ-21", "email": "petrov@example.com"}'
+curl -X POST http://localhost:8000/students \
+     -H "Content-Type: application/json" \
+     -d '{"first_name": "Иван", "last_name": "Петров", "group": "ИВТ-21", "email": "petrov@example.com"}'
 ```
 
 ## Формат данных студента
@@ -70,4 +99,4 @@ curl -X POST http://localhost:8000/students -H "Content-Type: application/json" 
 }
 ```
 
-Данные хранятся в памяти. При запуске загружаются тестовые данные.
+> ℹ️ Данные хранятся в памяти. При запуске загружаются тестовые данные.
